@@ -1,7 +1,17 @@
-from django.shortcuts import render
+from django.contrib.auth import load_backend
+from django.http.response import JsonResponse
+from django.shortcuts import redirect, render
+from django.views import View
+from .models import *
+from django.contrib import messages
+from django.db.models import Q
+from django.http import JsonResponse
 
 # Create your views here.
 
 
-def index(request):
-    return render(request,'home.html')
+class Home(View):
+    def get(self,request):
+        
+        return render(request,'home.html')
+      
