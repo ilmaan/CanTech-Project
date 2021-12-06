@@ -1,10 +1,6 @@
-/* comment */
+.row1{
+    text-align: center;
+    margin: 0 auto;
+    align-content: center;
 
-.meb{
-    color: blueviolet;
-}
-
-.haam{
-    color:darkred;
-    font-size: 100px;
 }
