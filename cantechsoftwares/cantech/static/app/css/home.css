@@ -1,6 +1,7 @@
 
 body{
     font-family: 'Poppins' !important;  
+
 }
 * {
         font-size: 100%;
@@ -8,6 +9,7 @@ body{
     }
 
 .row1{
+  
     text-align: center;
     margin: 0 auto;
     align-content: center;
@@ -19,6 +21,7 @@ body{
     width: 100%;
     opacity: 1;
     top: 0;
+
 }
 
 .row1 h1{
@@ -57,7 +60,7 @@ button {
   font-weight: 500;
   background: transparent;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 2.3s ease;
   position: relative;
   display: inline-block;
    box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
@@ -67,9 +70,9 @@ button {
 }
 
 @-webkit-keyframes shiny-btn1 {
-    0% { -webkit-transform: scale(0) rotate(45deg); opacity: 0; }
-    80% { -webkit-transform: scale(0) rotate(45deg); opacity: 0.5; }
-    81% { -webkit-transform: scale(4) rotate(45deg); opacity: 1; }
+    0% { -webkit-transform: scale(0) rotate(95deg); opacity: 0; }
+    80% { -webkit-transform: scale(0) rotate(90deg); opacity: 0.5; }
+    81% { -webkit-transform: scale(4) rotate(95deg); opacity: 1; }
     100% { -webkit-transform: scale(50) rotate(45deg); opacity: 0; }
 }
 
@@ -99,7 +102,7 @@ background-image: linear-gradient(315deg, #4dccc6 0%, #96e4df 74%);
   transition: all 0.3s ease;
 }
 .btn-13:hover {
-  color: #fff;
+  color: black;
 }
 .btn-13:hover:after {
   top: 0;
@@ -114,14 +117,89 @@ background-image: linear-gradient(315deg, #4dccc6 0%, #96e4df 74%);
 .row3{
     padding: 5vh;
     font-weight: 600;
+    background: #C9D6FF;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #E2E2E2, #C9D6FF);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #E2E2E2, #C9D6FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 .row3 span{
     color: #e91e63;
+    font-weight: 800;
 }
 
 .row3 h3{
     font-weight: 700;
-    font-size: 30px;
+    font-size: 35px;
 }
+
+.row3 p{
+  font-size: 17px;
+  line-height: 28px;
+}
+
+.funfct {
+  box-shadow: 0 11px 20px rgb(123 149 162 / 15%);
+  line-height: 26px;
+  padding: 30px;
+  border-radius: 8px 8px 8px 40px;
+  margin-top: 30px;
+  position: relative;
+  text-align: center;
+}
+
+.srcl1 {
+  background: #f3f5ff;
+  border-bottom: 4px solid #b0bdff;
+}
+.srcl2 {
+  background: #fff3e6;
+  border-bottom: 4px solid #ffc093;
+}
+
+.row3 h5{
+  display: inline-block;
+    font-weight: 900;
+    font-size: 26px;
+    color: #050748;
+    padding: 15px 0;
+}
+
+.letsbuild{
+  font-size: 25px !important;
+}
+
+/* Row 4 Section 4 */
+
+.row4{
+  background: #EECDA3;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #EF629F, #EECDA3);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #EF629F, #EECDA3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  /* margin: 0 auto; */
+  text-align: center;
+  align-items: center;
+  padding-top: 10vh;
+}
+
+.row4 h6{
+  color: #e60072;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 18px;
+  font-weight: 400;
+  margin: 0 0 15px 0;
+  display: block;
+}
+
+.row4 p{
+  width: 60%;
+  text-align: center;
+  margin: 0 auto;
+  color: #13D;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  margin-top: 5vh;
+  margin-bottom: 10vh; 
+}
+
 
 
