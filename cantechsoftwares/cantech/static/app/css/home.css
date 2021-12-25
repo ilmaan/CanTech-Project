@@ -181,6 +181,13 @@ background-image: linear-gradient(315deg, #4dccc6 0%, #96e4df 74%);
   /* z-index: -2;  */
 }
 
+.trdsec{
+  background: #EECDA3;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #EF629F, #EECDA3);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #EF629F, #EECDA3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  /* margin: 0 auto; */
+}
+
 .row4 h6{
   color: #e60072;
   text-transform: uppercase;
@@ -191,7 +198,7 @@ background-image: linear-gradient(315deg, #4dccc6 0%, #96e4df 74%);
   display: block;
 }
 
-.row4 p{
+.row4p{
   width: 60%;
   text-align: center;
   margin: 0 auto;
@@ -241,7 +248,7 @@ html .mt30 {
   background-position: top right;
   background-repeat: no-repeat;
   text-align: center;
-  padding: 50px 20px;
+  padding: 50px 0px;
   margin: 0;
   /* position: relative; */
   border: 1px solid #d4f0ff;
@@ -267,7 +274,7 @@ html .mt30 {
   vertical-align: baseline;
 }
 
-elegantshadow {
+.elegantshadow {
   color: #131313;
   background-color: #e7e5e4;
   letter-spacing: .15em;
@@ -307,9 +314,11 @@ elegantshadow {
   color: #2c2c2c;
   letter-spacing: .05em;
   font-weight: 600;
+  margin-bottom:3vh ;
   text-shadow: 
     4px 4px 0px #d5d5d5, 
     7px 7px 0px rgba(0, 0, 0, 0.2);
+
 
 }
 
@@ -322,6 +331,7 @@ elegantshadow {
 
 .hover-text {
   position: relative;
+  text-align: left;
 }
 
 .hover-text:before {
@@ -332,7 +342,9 @@ elegantshadow {
   top: 0;
   bottom: 0;
   color: white;
-  background: rgba(40, 107, 196, 0.3) !important;
+  border-radius: 40px;
+  /* background: rgba(40, 107, 196, 0.3) !important; */
+  background: rgb(230, 0, 114, 0.3) 
   /* z-index: -1; */
 }
 
@@ -346,8 +358,51 @@ elegantshadow {
 .hover-text:hover::before {
   transform: scaleX(1);
   transform-origin: left;
+  
 }
 
+.s-block li{
+  float: left;
+  padding: 0px 15px;
+  border-left: 1px solid lightgrey;
+  height: 18px;
+  position: relative;
+  font-weight:800 ;
+}
 
+.s-block li:before {
+  content: " ";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  color: white;
+  /* background: rgba(40, 107, 196, 0.3) !important; */
+  background: rgb(3, 252, 219, 0.3) 
+  /* z-index: -1; */
+}
 
+.s-block li::before {
+  transform: scaleX(0);
+  transform-origin: right;
+  color: white;
+  transition: transform .3s ease;
+}
 
+.s-block li:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+  
+}
+
+.row4p1{
+  text-align: left;
+  color: rgb(117, 117, 117);
+  margin-top: 3vh;
+  font-size: 15px;
+}
+
+.servblock{
+  padding: 20px;
+}
