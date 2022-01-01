@@ -333,6 +333,7 @@ html .mt30 {
 .hover-text {
   position: relative;
   text-align: left;
+  padding: 3px 10px;
 }
 
 .hover-text:before {
@@ -345,7 +346,8 @@ html .mt30 {
   color: white;
   border-radius: 40px;
   /* background: rgba(40, 107, 196, 0.3) !important; */
-  background: rgb(230, 0, 114, 0.3) 
+  background: rgb(230, 0, 114, 0.3) ;
+  padding: 3px 10px;
   /* z-index: -1; */
 }
 
@@ -354,11 +356,13 @@ html .mt30 {
   transform-origin: right;
   color: white;
   transition: transform .3s ease;
+  padding: 3px 10px;
 }
 
 .hover-text:hover::before {
   transform: scaleX(1);
   transform-origin: left;
+  padding: 3px 10px;
   
 }
 
@@ -410,4 +414,43 @@ html .mt30 {
 
 .s-block ul{
   padding-top: 0px;
+  display: initial;
+}
+
+
+/* ROW 5 */
+
+.row5{
+  padding-top: 15vh;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABZJREFUeNpi2r9//38gYGAEESAAEGAAasgJOgzOKCoAAAAASUVORK5CYII=);
+}
+
+.row5 h2{
+  color: #050748;
+  font-weight: 600;
+  line-height: initial;
+  margin-bottom: 15vh;
+}
+
+.row5 span{
+  color: #e91e63;
+  font-weight: 600;
+}
+
+
+.row5 .container-fluid{
+  display: flex;
+  align-items: center;
+  margin: 5vh 0vh;
+  padding: 0vh 0vh;
+}
+
+.det-body{
+  padding-left: 5vh;
+}
+
+.det-body h4{
+  font-size: 25px;
+  font-weight: 600;
+  
 }
