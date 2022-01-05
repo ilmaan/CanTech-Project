@@ -454,3 +454,18 @@ html .mt30 {
   font-weight: 600;
   
 }
+
+.row5 p{
+  font-weight: 600;
+  color: #545454;
+  text-align: center;
+}
+
+.banner1{
+  border-radius: 20px;
+  margin-bottom: 5vh;
+}
+
+.det-body p{
+  text-align: left;
+}
