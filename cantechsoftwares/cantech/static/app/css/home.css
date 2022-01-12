@@ -188,12 +188,12 @@ background-image: linear-gradient(315deg, #4dccc6 0%, #96e4df 74%);
   /* margin: 0 auto; */
 }
 
-.row4 h6{
+ .row4h6{
   color: #e60072;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  font-size: 18px;
-  font-weight: 400;
+  font-size: 24px;
+  font-weight: 600;
   margin: 0 0 15px 0;
   display: block;
 }
@@ -591,3 +591,9 @@ background: linear-gradient(0deg, rgba(0,172,238,1) 0%, rgba(2,126,251,1) 100%);
 .btn-12-span{
   color: #fff !important;
 }
+
+.row6{
+  text-align: center;
+  padding: 5vh 0vh;
+}
+
