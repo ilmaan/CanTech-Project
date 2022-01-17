@@ -60,7 +60,7 @@ button {
   font-weight: 500;
   background: transparent;
   cursor: pointer;
-  transition: all 2.3s ease;
+  transition: all 1.3s ease;
   position: relative;
   display: inline-block;
    box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
@@ -79,9 +79,10 @@ button {
 /* 13 */
 .btn-13 {
   background-color: #89d8d3;
-background-image: linear-gradient(315deg, #89d8d3 0%, #03c8a8 74%);
+  background-image: linear-gradient(315deg, #89d8d3 0%, #03c8a8 74%);
   border: none;
   z-index: 1;
+  margin: 10px auto;
 }
 .btn-13:after {
   position: absolute;
@@ -167,6 +168,7 @@ background-image: linear-gradient(315deg, #4dccc6 0%, #96e4df 74%);
 .letsbuild{
   font-size: 25px !important;
 }
+
 
 /* Row 4 Section 4 */
 
@@ -596,7 +598,7 @@ background: linear-gradient(0deg, rgba(0,172,238,1) 0%, rgba(2,126,251,1) 100%);
   text-align: center;
   padding: 5vh 0vh;
 
-  background: #333;
+  background: linear-gradient(to right top, #d16ba5, #ca70b8, #be76cb, #ac7fde, #9288ee, #8687f4, #7686f9, #6385ff, #7177ff, #8764ff, #a149ff, #bd06ff);
   height: 100%;
   overflow: hidden;
   text-align: center;
@@ -605,7 +607,7 @@ background: linear-gradient(0deg, rgba(0,172,238,1) 0%, rgba(2,126,251,1) 100%);
 .row6 p{
   width: 60%;
   margin: 0 auto;
-  color: darkorchid;
+  color: white;
   font-weight: 700;
   margin-bottom: 10vh;
   letter-spacing: 1.3px;
@@ -619,13 +621,14 @@ background: linear-gradient(0deg, rgba(0,172,238,1) 0%, rgba(2,126,251,1) 100%);
   top: 50%;
   transform: translateY(-50%);
   /* width: 320px; */
+  box-shadow: inset 0 0 0 200px rgba(255,255,255,0.17);
 }
 
 .shape {
   fill: transparent;
   stroke-dasharray: 140 540;
   stroke-dashoffset: -474;
-  stroke-width: 8px;
+  stroke-width: 5px;
   stroke: #19f6e8;
 }
 
@@ -637,18 +640,19 @@ background: linear-gradient(0deg, rgba(0,172,238,1) 0%, rgba(2,126,251,1) 100%);
   line-height: 32px;
   position: relative;
   top: -48px;
+  padding: 1px 20px;
 }
 
 @keyframes draw {
   0% {
     stroke-dasharray: 140 540;
     stroke-dashoffset: -474;
-    stroke-width: 8px;
+    stroke-width: 5px;
   }
   100% {
     stroke-dasharray: 760;
     stroke-dashoffset: 0;
-    stroke-width: 2px;
+    stroke-width: 10px;
   }
 }
 
@@ -656,3 +660,132 @@ background: linear-gradient(0deg, rgba(0,172,238,1) 0%, rgba(2,126,251,1) 100%);
   -webkit-animation: 0.5s draw linear forwards;
   animation: 0.5s draw linear forwards;
 }
+
+.text img{
+  float: left;
+}
+
+.text h5{
+  font-weight: 700;
+}
+
+/* ROW7 */
+
+.row7{
+  text-align: center;
+  padding: 50px;
+  font-weight: 700;
+  background: #868585;
+}
+.row7 h1{
+  font-weight: 600;
+}
+.row7 .btn-12 span{
+  width: 200px;
+}
+
+.row7 .btn-12{
+  width: 250px;
+}
+
+.row8{
+  background: #9288ee;
+  padding: 10vh;
+}
+
+.row8 h2 h4{
+  font-weight: 700;
+  margin: 5vh;
+}
+
+.row8 .col-md-5{
+  align-self: center;
+}
+
+.row8 input, textarea, label{
+  border: none;
+  border-bottom: 2px solid #e6e6e6;
+  border-radius: 20px;
+    padding-left: 20px;
+}
+
+.row8 .container{ 
+  border-radius: 20px;
+  box-shadow: inset 0 0 0 280px rgba(255,255,255,0.17);
+}
+
+/* 7 */
+.btn-7 {
+  background: linear-gradient(0deg, rgba(255,151,0,1) 0%, rgba(251,75,2,1) 100%);
+    line-height: 42px;
+    padding: 0;
+    border: none;
+  }
+  .btn-7 span {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  .btn-7:before,
+  .btn-7:after {
+    position: absolute;
+    content: "";
+    right: 0;
+    bottom: 0;
+    background: rgba(251,75,2,1);
+    box-shadow:
+     -7px -7px 20px 0px rgba(255,255,255,.9),
+     -4px -4px 5px 0px rgba(255,255,255,.9),
+     7px 7px 20px 0px rgba(0,0,0,.2),
+     4px 4px 5px 0px rgba(0,0,0,.3);
+    transition: all 0.3s ease;
+  }
+  .btn-7:before{
+     height: 0%;
+     width: 2px;
+  }
+  .btn-7:after {
+    width: 0%;
+    height: 2px;
+  }
+  .btn-7:hover{
+    color: rgba(251,75,2,1);
+    background: white;
+  }
+  .btn-7:hover:before {
+    height: 100%;
+  }
+  .btn-7:hover:after {
+    width: 100%;
+  }
+  .btn-7 span:before,
+  .btn-7 span:after {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 0;
+    background: rgba(251,75,2,1);
+    box-shadow:
+     -7px -7px 20px 0px rgba(255,255,255,.9),
+     -4px -4px 5px 0px rgba(255,255,255,.9),
+     7px 7px 20px 0px rgba(0,0,0,.2),
+     4px 4px 5px 0px rgba(0,0,0,.3);
+    transition: all 0.3s ease;
+  }
+  .btn-7 span:before {
+    width: 2px;
+    height: 0%;
+  }
+  .btn-7 span:after {
+    height: 2px;
+    width: 0%;
+  }
+  .btn-7 span:hover:before {
+    height: 100%;
+  }
+  .btn-7 span:hover:after {
+    width: 100%;
+  }
+  
+  

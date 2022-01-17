@@ -1,7 +1,85 @@
-@media only screen 
-   and (min-width : 1600px) {
-   /* Styles here */
+@media only screen and (max-width: 600px) {
+ 
+   .row1{
+      padding: 5vh 0vh;
+   }
 
-   
+   .row1 h1{
+      font-size: 30px;
+      line-height: 40px;
+      padding: 2vh 1vh;
+   }
+
+   .row1 p{
+      font-size: 15px;
+   }
+
+   .row3{
+      padding: 1vh;
+   }
+
+   .row3 h3 {
+      font-size: 25px;
+  }
+
+  .row3 img {
+   width: 70px;
+   float: left;
+  }
+
+  .row4{
+     padding-top: 5vh;
+  }
+
+  .row4p{
+     width: 100%;
+     font-size: 15px;
+     margin-bottom: 5vh;
+  }
+
+  .wide-sblock{
+     height: auto;
+  }
+
+  .s-block{
+     padding: 15px 0px;
+  }
+
+  .row4p1{
+     font-size: 12px;
+  }
+
+  .row4 img{
+     height: fit-content;
+  }
+
+  .row5{
+     padding-top:5vh ;
+  }
+
+  .row5 h2{
+     margin-bottom: 5vh;
+  }
+
+  .row6 p{
+     width: 100%;
+     margin-bottom: 0vh;
+  }
+
+  .row7{
+     padding: 10px;
+     font-size: 33px;
+  }
+
+  .row8{
+     padding: 1vh;
+  }
+
+
+
+
+
+
 
 }
+
