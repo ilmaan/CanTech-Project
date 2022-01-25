@@ -124,12 +124,12 @@ background-image: linear-gradient(315deg, #4dccc6 0%, #96e4df 74%);
     background: linear-gradient(to right, #E2E2E2, #C9D6FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 }
-.row3 span{
+.row3 span, .row2a h3{
     color: #e91e63;
     font-weight: 800;
 }
 
-.row3 h3{
+.row3 h3, .row2a h2{
     font-weight: 700;
     font-size: 35px;
 }

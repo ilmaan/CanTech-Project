@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+About Us
+{% endblock %}
+
+{% block navbar-active %}
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+ 
+<ul class="navbar-nav ml-auto">
+  <div class="hori-selector"><div class="left"></div><div class="right"></div></div>
+  <li class="nav-item ">
+      <a class="nav-link " href="{% url 'home' %}"><i class="fas fa-tachometer-alt"></i> Home</a>
+  </li>
+  <li class="nav-item active">
+      <a class="nav-link" href="{% url 'About-Us' %}"><i class="far fa-address-book"></i> About</a>
+  </li>
+  <li class="nav-item">
+      <a class="nav-link" href="{% url 'coming-soon' %}"><i class="far fa-clone"></i> Services</a>
+  </li>
+  <li class="nav-item">
+      <a class="nav-link" href="{% url 'coming-soon' %};"><i class="far fa-calendar-alt"></i> Contact</a>
+  </li>
+  <li class="nav-item">
+      <a class="nav-link" href="{% url 'coming-soon' %}"><i class="far fa-chart-bar"></i> Developers Section</a>
+  </li>
+</ul>
+
+</div>
+{% endblock %}
+
+{% block content %}
+
+<!-- FIRST CONTAINER -->
+<div class="container-flex ">
+    <div class="row row1">
+        <div class="col">
+            <h1>About Us</h1>       
+            <p>Every product is unique, but so is also our tailored process:<br>
+                we fuse strategy, creation and engineering.
+                To genuinely innovate, we foster synergies beyond the established.</p>
+            <div class="row2">
+                <button class="custom-btn btn-13">Request A Quote</button>
+                
+            </div>
+        </div>
+    </div>
+    <!-- SECOND CONTAINER -->
+    <div class="container row2a">
+        <div class="row">
+            <div class="col-md-6" >
+
+            </div>
+            <div class="col-md-6" >
+                <h3>About</h3>
+                <h2>CanTech</h2>
+                <p>We are an IT Solution organization that focuses on Digitalization. We hold specialization in IT Development and Consulting, We focus on market and individuals where there is need to get online.</p>
+
+                <h3> We Focus On -</h3>
+                <ul>
+                    <li>Business Website Development</li>
+                    <li>Profile Development</li> 
+                    <li>Website Design</li>
+                    <li>Marketing</li> 
+                    <li>SEO</li>
+
+                </ul>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+{% endblock %}
