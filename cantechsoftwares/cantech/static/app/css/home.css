@@ -158,7 +158,7 @@ background-image: linear-gradient(315deg, #4dccc6 0%, #96e4df 74%);
   border-bottom: 4px solid #ffc093;
 }
 
-.row3 h5{
+.row3 h5, .row2a h5{
   display: inline-block;
     font-weight: 900;
     font-size: 26px;
