@@ -41,6 +41,10 @@ class Contact(View):
         
         return render(request,'contact.html')
 
+class Developer(View):
+    def get(self,request):
+        
+        return render(request,'developers.html')
 
 
 class FeedbackForm(View):
