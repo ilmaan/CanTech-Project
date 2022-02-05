@@ -407,8 +407,8 @@
 	 height: 0;
 }
  .star-checkbox label {
-	 width: 24px;
-	 height: 24px;
+	 /* width: 24px;
+	 height: 24px; */
 	 display: flex;
 	 justify-content: center;
 	 align-items: center;
@@ -640,6 +640,7 @@
 	 flex-shrink: 0;
 	 padding: 6px 16px;
 	 font-weight: 700;
+	 height: fit-content;
 }
  .mode-switch.active .moon {
 	 fill: var(--main-color);
