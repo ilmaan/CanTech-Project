@@ -63,6 +63,20 @@
 
   <title class="row01">CanTech | {% block title %} {% endblock title %}</title>
 
+  <!--Start of Tawk.to Script-->
+<script type="text/javascript">
+  var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+  (function(){
+  var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+  s1.async=true;
+  s1.src='https://embed.tawk.to/62022dd09bd1f31184db7b39/1frc8bg4j';
+  s1.charset='UTF-8';
+  s1.setAttribute('crossorigin','*');
+  s0.parentNode.insertBefore(s1,s0);
+  })();
+  </script>
+  <!--End of Tawk.to Script-->
+
   
 </head>
 
@@ -110,28 +124,28 @@
         <div class="row">
           <div class="col-xl-4 col-md-4 mb-30">
             <div class="single-cta">
-              <i class="fas fa-map-marker-alt"></i>
+              <i class="fas fa-map-marker-alt" style="color: orange;"></i>
               <div class="cta-text">
                 <h4>Find us</h4>
-                <span>Sailing Club Road Jamia Nagar</span>
+                <span><a href="https://www.google.com/maps?q=Sailing+Club+Road,+Batla+House,+Canal+Colony,+Okhla,+New+Delhi,+Delhi,+India" target="blank">Sailing Club Road Jamia Nagar</a></span>
               </div>
             </div>
           </div>
           <div class="col-xl-4 col-md-4 mb-30">
             <div class="single-cta">
-              <i class="fas fa-phone"></i>
+              <i class="fas fa-phone" style="color: orange;" ></i>
               <div class="cta-text">
                 <h4>Call us</h4>
-                <span>9818744671 </span>
+                <span><a href="https://wa.link/hdy2ri" target="blank">9818744671 </a></span>
               </div>
             </div>
           </div>
           <div class="col-xl-4 col-md-4 mb-30">
             <div class="single-cta">
-              <i class="far fa-envelope-open"></i>
+              <i class="far fa-envelope-open" style="color: orange;"></i>
               <div class="cta-text">
                 <h4>Mail us</h4>
-                <span>cantechsoftwares@gmail.com</span>
+                <span><a href="mailto:cantechsoftwares@gmail.com" target="blank">cantechsoftwares@gmail.com</a></span>
               </div>
             </div>
           </div>
@@ -165,13 +179,13 @@
                       <i class="fab fa-facebook-f icon"></i> </a>
                   </li>
                   <li>
-                    <a href="{% url 'coming-soon' %}"><i class="fab fa-twitter icon"></i></a>
+                    <a href="https://wa.link/hdy2ri"><i class="fab fa-whatsapp icon"></i></a>
                   </li>
                   <li>
                     <a href="{% url 'coming-soon' %}"><i class="fab fa-linkedin-in icon"></i></a>
                   </li>
                   <li>
-                    <a href="{% url 'coming-soon' %}"><i class="fab fa-google-plus-g icon"></i></a>
+                    <a href="mailto:cantechsoftwares@gmail.com" ><i class="fab fa-google-plus-g icon"></i></a>
                   </li>
                   <li>
                     <a href="{% url 'coming-soon' %}"><i class="fab fa-instagram icon"></i></a>
@@ -187,14 +201,11 @@
               </div>
               <ul>
                 <li><a href="{% url 'home' %}">Home</a></li>
-                <li><a href="{% url 'coming-soon' %}">about</a></li>
-                <li><a href="{% url 'coming-soon' %}">services</a></li>
+                <li><a href="{% url 'About-Us' %}">About Us</a></li>
+                <li><a href="{% url 'services' %}">Our Services</a></li>
                 <li><a href="{% url 'coming-soon' %}">portfolio</a></li>
-                <li><a href="{% url 'coming-soon' %}">Contact</a></li>
-                <li><a href="{% url 'coming-soon' %}">About us</a></li>
-                <li><a href="{% url 'coming-soon' %}">Our Services</a></li>
+                <li><a href="{% url 'contact-us' %}">Contact Us</a></li>
                 <li><a href="{% url 'coming-soon' %}">Expert Team</a></li>
-                <li><a href="{% url 'coming-soon' %}">Contact us</a></li>
                 <li><a href="{% url 'coming-soon' %}">Latest News</a></li>
               </ul>
             </div>
