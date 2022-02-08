@@ -55,3 +55,14 @@ jQuery(document).ready(function($){
 	// Add active class to target link
 	target.parent().addClass('active');
 });
+
+
+// LOGIN PAGE SCRIPT
+
+
+ $("#login-button").click(function(event){
+		 event.preventDefault();
+	 
+	 $('form').fadeOut(500);
+	 $('.wrapper').addClass('form-success');
+});

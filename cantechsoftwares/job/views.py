@@ -19,3 +19,15 @@ class Admin_login(View):
         
         return render(request,'admin_login.html')
 
+class User_login(View):
+    def get(self,request):
+        
+        return render(request,'user_login.html')
+
+class Recruiter_login(View):
+    def get(self,request):
+        
+        return render(request,'recruiter_login.html')
+
+
+

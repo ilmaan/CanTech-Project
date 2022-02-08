@@ -9,7 +9,9 @@ from . import views
 
 urlpatterns = [
     path('',views.Portal.as_view(),name="Portal"),
-    path('admin-login',views.Admin_login.as_view(),name="admin-login")
+    path('admin-login',views.Admin_login.as_view(),name="admin-login"),
+    path('user-login',views.User_login.as_view(),name="user-login"),
+    path('recruiter-login',views.Recruiter_login.as_view(),name="recruiter-login"),
     
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -25,7 +25,7 @@ Portal
             <a class="nav-link" href="{% url 'contact-us' %}"><i class="far fa-calendar-alt"></i> Contact</a>
         </li>
         <li class="nav-item active">
-            <a class="nav-link" href="job/"><i class="far fa-chart-bar"></i> Developers Section</a>
+            <a class="nav-link" href="{% url 'Portal' %}"><i class="far fa-chart-bar"></i> Developers Section</a>
         </li>
     </ul>
 
@@ -52,7 +52,7 @@ Portal
             <!-- 2 ELEMENTS -->
             <div class="col-md-4" >
                 <div class="servblock" >
-                    <a href="admin-login" class="service-block s-block wide-sblock row" >
+                    <a href="{% url 'user-login' %}" class="service-block s-block wide-sblock row" >
                         <img class="aboutu5-img" src="{% static 'app/images/businessman.png' %}" alt=""  >
                         <h5 class="bold-h5" >Applicant</h5>
                         <p>Looking For Development Projects and Active Job Roles.</p>
@@ -61,7 +61,7 @@ Portal
             </div>
             <div class="col-md-4" >
                 <div class="servblock" >
-                    <a href="#"  class="service-block s-block wide-sblock row" >
+                    <a href="{% url 'recruiter-login' %}"  class="service-block s-block wide-sblock row" >
                         <img class="aboutu5-img" src="{% static 'app/images/recruitment.png' %}" alt=""  >
                         <h5 class="bold-h5" >Recruiter</h5>
                         <p>Looking Active Applicants, For Projects And Job Roles</p>
@@ -70,7 +70,7 @@ Portal
             </div>
             <div class="col-md-4" >
                 <div class="servblock" >
-                    <a href="#"  class="service-block s-block wide-sblock row" >
+                    <a href="{% url 'admin-login' %}"  class="service-block s-block wide-sblock row" >
                         <img class="aboutu5-img" src="{% static 'app/images/admin.png' %}" alt=""  >
                         <h5 class="bold-h5" >Admin</h5>
                         <p>Authorizing Applicants And Recruiters</p>

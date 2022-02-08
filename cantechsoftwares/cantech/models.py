@@ -9,7 +9,3 @@ class FeedbackModel(models.Model):
     f_email = models.EmailField()
     f_message = models.TextField(max_length=500)
 
-
-class DevelopersModel(models.Model):
-    d_name = models.CharField(max_length=30,blank=True)
-    

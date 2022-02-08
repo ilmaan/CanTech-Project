@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block title %}
-Admin
+User
 {% endblock %}
 
 {% block navbar-active %}
@@ -38,17 +38,17 @@ Admin
 <div class="container-flex ">
     <div class="row row1">
         <div class="col">
-            <h1>Admin Login</h1>
+            <h1>User Login</h1>
 
         </div>
     </div>
     <div class="login-wrapper">
         <div class="container">
-            <h1>Welcome Admin</h1>
+            <h1>Welcome User</h1>
             
             <form class="form">
                 {% csrf_token %}
-                <input type="text" placeholder="Username">
+                <input type="email" placeholder="Email">
                 <input type="password" placeholder="Password">
                 <button type="submit" id="login-button">Login</button>
             </form>
