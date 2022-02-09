@@ -22,6 +22,7 @@ class UserModel(models.Model):
     total_projects = models.IntegerField(default=0)
     age = models.IntegerField(default=0,null=True,blank=True)
     experience = models.IntegerField(default=0,null=True,blank=True)
+    type = models.CharField(max_length=100,null=True,blank=True)
 
     def __str__(self):
         return self.user.username

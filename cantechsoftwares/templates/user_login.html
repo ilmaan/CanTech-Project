@@ -34,40 +34,85 @@ User
 
 {% block content %}
 
+<script>
+    function checkpass(){
+        if(document.signup1.psswd.value != document.signup1.cpsswd.value){
+            alert('Passwords do not match');
+            document.signup.cpsswd.focus();
+            event.preventDefault()
+            
+        }
+        return true;
+    }
+</script>
+
+{% if message %}
+<script>alert(" Something Went Wrong {{ message }}");</script>
+{% endif %}
 <!-- FIRST CONTAINER -->
-<div class="container-flex ">
-    <div class="row row1">
+<div class="container-flex signup ">
+    <!-- <div class="row row1">
         <div class="col">
             <h1>User Login</h1>
 
         </div>
-    </div>
-    <div class="login-wrapper">
-        <div class="container">
-            <h1>Welcome User</h1>
-            
-            <form class="form">
-                {% csrf_token %}
-                <input type="email" placeholder="Email">
-                <input type="password" placeholder="Password">
-                <button type="submit" id="login-button">Login</button>
-            </form>
-        </div>
-        
-        <ul class="bg-bubbles">
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-        </ul>
-    </div>
-
+    </div> -->
+    
+    <!-- SIGNIN AND SIGNUP USER -->
+    
+<div class="container" id="container">
+	<div class="form-container sign-up-container">
+		<form   name="signup1" onsubmit="return checkpass();" enctype="multipart/form-data">
+            {% csrf_token %}
+			<h1>Create Account</h1>
+			<!-- <div class="social-container">
+				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+				<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+			</div> -->
+			<span>use your email for registration</span>
+			<input required type="text" name="uname" placeholder="Name" />
+			<input required type="email" name="uemail" placeholder="Email" />
+            <input required type="tel" name="uphnno"  id="" placeholder="Phone Number">
+			<input required type="password" name="psswd" placeholder="Password" />
+			<input required type="password" name="cpsswd" placeholder="Confirm Password" />
+			<!-- <button type="submit">Sign Up</button> -->
+            <input type="submit" value="Sign In">
+		</form>
+	</div>
+	<div class="form-container sign-in-container">
+		<form action="#">
+			<h1>Sign in</h1>
+			<!-- <div class="social-container">
+				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+				<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+			</div> -->
+			<span>  use your account</span>
+			<input required type="email" placeholder="Email" />
+			<input required type="password" placeholder="Password" />
+			<a href="#">Forgot your password?</a>
+			<button>Sign In</button>
+		</form>
+	</div>
+	<div class="overlay-container">
+		<div class="overlay">
+			<div class="overlay-panel overlay-left">
+				<h2>Existing User?</h2>
+				<h1>Welcome Back!</h1>
+				<p>To keep connected with us please login with your info</p>
+				<button class="ghost" id="signIn">Sign In</button>
+			</div>
+			<div class="overlay-panel overlay-right">
+				<h2>New, Here?</h2>
+				<h1>Hello, User!</h1>
+				<p>Enter your details and start journey with us</p>
+				<button class="ghost" id="signUp">Sign Up</button>
+			</div>
+		</div>
+	</div>
+</div>
+ 
 
 
 
