@@ -62,7 +62,7 @@ User
     
 <div class="container" id="container">
 	<div class="form-container sign-up-container">
-		<form   name="signup1" onsubmit="return checkpass();" enctype="multipart/form-data">
+		<form  method="POST" action="" name="signup1" onsubmit="return checkpass();" enctype="multipart/form-data">
             {% csrf_token %}
 			<h1>Create Account</h1>
 			<!-- <div class="social-container">
