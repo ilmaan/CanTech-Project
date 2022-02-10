@@ -49,11 +49,6 @@ class Developer(View):
         else:
             return render(request,'developers.html')
 
-class Signup(View):
-    def get(self,request):
-        
-        return render(request,'signup.html')
-
 
 
 class FeedbackForm(View):

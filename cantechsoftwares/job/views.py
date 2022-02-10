@@ -34,11 +34,12 @@ class User_login(View):
                 if user:
                     try:
                         userm = UserModel.objects.get(user=user)
-                        if userm.user_type == 'Applicant':
+                        if userm.type == 'Applicant':
                             login(request, user)
                             message = "Login Successfull"
-                            return redirect('Portal')
-                    except:
+                            return redirect('developer')
+                    except Exception as e:
+                        print(e)
                         messages.error(request, 'Invalid Username or Password')
                         return render(request, 'user_login.html')
                 else:
@@ -56,11 +57,10 @@ class User_login(View):
                 type = "Applicant"
                 try:
                     user = User.objects.create_user(first_name=uname,username=uemail,password=psswd)
-                    UserModel.objects.create(uname=uname,uemail=uemail,uphno=uphno,psswd=psswd,type=type)
+                    UserModel.objects.create(user=user,uname=uname,uemail=uemail,uphone=uphno,password=psswd,type=type)
                     return render(request,'signup.html',{uname:'uname',uemail:'uemail',uphno:'uphno',psswd:'psswd',type:'type'})
-                except:
-                    message = messages.error(request, 'User Already Exists')
-                    return render(request,'user_login.html', {'message': message})   
+                except Exception as e:
+                    return render(request,'user_login.html')   
                  
         
 
@@ -74,4 +74,8 @@ class Recruiter_login(View):
         return render(request,'recruiter_login.html')
 
 
+class Signup(View):
+    def get(self,request):
+        
+        return render(request,'signup.html')
 
