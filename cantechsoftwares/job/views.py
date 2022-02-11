@@ -1,3 +1,4 @@
+from calendar import c
 from email import message
 from django.contrib.auth import authenticate, load_backend, login, logout
 from django.http.response import JsonResponse
@@ -54,13 +55,19 @@ class User_login(View):
                 uemail = request.POST['uemail']
                 uphno = request.POST['uphno']
                 psswd = request.POST['psswd']
+                cpsswd = request.POST['cpsswd']
                 type = "Applicant"
-                try:
-                    user = User.objects.create_user(first_name=uname,username=uemail,password=psswd)
-                    UserModel.objects.create(user=user,uname=uname,uemail=uemail,uphone=uphno,password=psswd,type=type)
-                    return render(request,'signup.html',{uname:'uname',uemail:'uemail',uphno:'uphno',psswd:'psswd',type:'type'})
-                except Exception as e:
+                if psswd == cpsswd:
+                    try:
+                        user = User.objects.create_user(first_name=uname,username=uemail,password=psswd)
+                        UserModel.objects.create(user=user,uname=uname,uemail=uemail,uphone=uphno,password=psswd,type=type)
+                        return render(request,'signup.html',{uname:'uname',uemail:'uemail',uphno:'uphno',psswd:'psswd',type:'type'})
+                    except Exception as e:
+                        print(e)
+                        return render(request,'user_login.html') 
+                else: 
                     return render(request,'user_login.html')   
+
                  
         
 
