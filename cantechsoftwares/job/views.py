@@ -38,14 +38,14 @@ class User_login(View):
                         if userm.type == 'Applicant':
                             login(request, user)
                             message = "Login Successfull"
-                            return redirect('developer')
+                            return redirect('developer',message)
                     except Exception as e:
                         print(e)
                         messages.error(request, 'Invalid Username or Password')
-                        return render(request, 'user_login.html')
+                        return render(request, 'user_login.html',e)
                 else:
                     message = 'Invalid Username or Password'
-                    return render(request, 'user_login.html')
+                    return render(request, 'user_login.html',e)
                 return redirect('Portal')   
 
             # FOR SIGNUP
@@ -65,7 +65,7 @@ class User_login(View):
                         return render(request,'signup.html',{'data':data})
                     except Exception as e:
                         print(e)
-                        return render(request,'user_login.html') 
+                        return render(request,'user_login.html',e) 
                 else: 
                     return render(request,'user_login.html')   
 
@@ -130,7 +130,7 @@ class Signup(View):
                 return redirect('developer')
             except Exception as e:
                 print(e)
-                return render(request,'signup.html')    
+                return render(request,'signup.html',e)    
 
     def get(self,request):
         
