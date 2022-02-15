@@ -24,11 +24,11 @@
     height: fit-content;
     width: 100%;
     overflow: hidden;
-    display: flex;
+    display: block;
     justify-content: center;
     font-family: 'Poppins', sans-serif;
     background-color: #050e2d;
-    padding-top: 20vh;
+    padding-top: 10vh;
 }
 .app-container {
     width: 100%;
