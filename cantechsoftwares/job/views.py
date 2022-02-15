@@ -86,9 +86,57 @@ class User_login(View):
         return render(request,'user_login.html',{'log_type':log_type})
 
 class Recruiter_login(View):
+    def post(self,request):
+        if request.method == 'POST':
+            inorup = request.POST['inorup']
+            # FOR LOGIN
+            if inorup == 'login':
+                username = request.POST['rname']
+                password = request.POST['psswd']
+                user = authenticate(username=username, password=password)
+                if user:
+                    try:
+                        userm = RecruiterModel.objects.get(user=user)
+                        if userm.user_type == 'Recruiter':
+                            login(request, user)
+                            print('SUCCSESS')
+                            message = "Login Successfull"
+                            return redirect('recruiter')
+                    except Exception as e:
+                        print(e)
+                        messages.error(request, 'Invalid Username or Password')
+                        return render(request, 'recruiter_login.html',e)
+                else:
+                    message = 'Invalid Username or Password'
+                    return render(request, 'recruiter_login.html',{'message':message})
+                return redirect('Portal')   
+
+            # FOR SIGNUP
+            elif inorup == 'signup':
+                rname = request.POST['rname']
+                remail = request.POST['remail']
+                rphno = request.POST['rphno']
+                psswd = request.POST['psswd']
+                cpsswd = request.POST['cpsswd']
+                company = request.POST['company']
+                type = "Recruiter"
+                data = {'uname':rname,'uemail':remail,'uphno':rphno,'psswd':psswd,'type':type}
+                print(data)
+                if psswd == cpsswd:
+                    try:
+                        user = User.objects.create_user(first_name=rname,username=remail,password=psswd,email=remail)
+                        RecruiterModel.objects.create(user=user,rname=rname,remail=remail,rphone=rphno,password=psswd,user_type=type,company=company)
+                        # return render(request,'signup.html',{'data':data})
+                        return redirect('recruiter')
+                    except Exception as e:
+                        message = 'User Already Exist by this Email or Mobile'
+                        return render(request,'recruiter_login.html',{'message':message}) 
+                else: 
+                    return render(request,'recruiter_login.html',{'message':'Password and Confirm Password does not match'})   
+
     def get(self,request):
         log_type = 'Recruiter'
-        return render(request,'user_login.html',{'log_type':log_type})
+        return render(request,'recruiter_login.html',{'log_type':log_type})
 
 
 class Signup(View):
