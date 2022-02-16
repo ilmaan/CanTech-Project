@@ -43,6 +43,7 @@ class RecruiterModel(models.Model):
     company = models.CharField(max_length=100,null=True,blank=True)
     remail = models.EmailField(unique=True)
     status = models.CharField(max_length=100,null=True,blank=True,default='Pending')
+    image = models.ImageField(upload_to='images/', blank=True, null=True)
     user_type = models.CharField(max_length=100,null=True,blank=True)
 
     def __str__(self):

@@ -35,19 +35,12 @@ Admin
 {% block content %}
 
 <!-- FIRST CONTAINER -->
-<div class="container-flex ">
-    <div class="row row1">
-        <div class="col">
-            <h1>Admin Login</h1>
-
-        </div>
-    </div>
-    <div class="login-wrapper">
+<div class="admin-login" >
+    <div class="wrapper">
         <div class="container">
-            <h1>Welcome Admin</h1>
+            <h1>Welcome, Admin</h1>
             
             <form class="form">
-                {% csrf_token %}
                 <input type="text" placeholder="Username">
                 <input type="password" placeholder="Password">
                 <button type="submit" id="login-button">Login</button>
@@ -67,10 +60,6 @@ Admin
             <li></li>
         </ul>
     </div>
-
-
-
-
 </div>
 
 
