@@ -28,10 +28,30 @@ class Logout(View):
 class Admin_login(View):
     def post(self,request):
         if request.method == 'POST':
-            sername = request.POST['uname']
-            password = request.POST['psswd']
+            username = request.POST['aname']
+            password = request.POST['psswd']   
+            user = authenticate(username=username, password=password) 
+            print("AAYA1")
+            try:
+                if user.is_staff:
+                    login(request, user)
+                    return redirect('Administrator')    # Redirect to a success page.   
+                else:
+                    # message = messages.error(request, 'Sorry you are not an admin')
+                    message= "Sorry you are not authoirized to login as admin Stay In your Limits !!"
+                    return render(request, 'admin_login.html',{'message':message})
+  
+            except Exception as e: 
+                # message = messages.error(request, 'Invalid Username or Password')
+                message = "Invalid Username or Password"
+                return render(request, 'admin_login.html',{'message':message})
+                       
     def get(self,request):
         return render(request,'admin_login.html')
+
+class Administrator(View):
+    def get(self,request):
+        return render(request,'administrator.html')
 
 class User_login(View):
     def post(self,request):

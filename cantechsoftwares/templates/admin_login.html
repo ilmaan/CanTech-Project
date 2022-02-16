@@ -34,16 +34,26 @@ Admin
 
 {% block content %}
 
+
+{% if message %}
+<script>alert(" Something Went Wrong: {{ message }}");</script>
+{% endif %}
+{% if e %}
+<script>alert(" Something Went Wrong: {{ e }}");</script>
+{% endif %}
+
 <!-- FIRST CONTAINER -->
 <div class="admin-login" >
     <div class="wrapper">
         <div class="container">
             <h1>Welcome, Admin</h1>
             
-            <form class="form">
-                <input type="text" placeholder="Username">
-                <input type="password" placeholder="Password">
-                <button type="submit" id="login-button">Login</button>
+            <form class="form" action="admin-login" method="post" name="adminsignin">
+                {% csrf_token %}
+                <input required type="text" name="aname" placeholder="Email" />
+			    <input required type="password" name="psswd" placeholder="Password" />
+                <!-- <button type="submit" id="login-button">Login</button> -->
+                <input type="submit" value="SUBMIT">
             </form>
         </div>
         
