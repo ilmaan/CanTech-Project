@@ -6,7 +6,7 @@ Services
 
 {% block navbar-active %}
 <div class="collapse navbar-collapse" id="navbarSupportedContent">
- 
+  
 <ul class="navbar-nav ml-auto">
   <div class="hori-selector"><div class="left"></div><div class="right"></div></div>
   <li class="nav-item ">
@@ -31,8 +31,11 @@ Services
 
 {% block content %}
 
+<link rel="stylesheet" href="{% static 'app/css/recruiter.css' %}">
+
+
 <div class="recruiterbody" >
-    <div class="app-container">
+  <div class="app-container">
         <div class="row" >
         <div class="  app-left">
           <button class="close-menu">
@@ -75,6 +78,11 @@ Services
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-pie-chart"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"/><path d="M22 12A10 10 0 0 0 12 2v10z"/></svg>
                 Reports
               </a>
+            </li>
+            <li class="nav-list-item">
+              <a href="{% url 'Logout' %}"><button  class="mode-switch" title="Logout"  data-bs-toggle="tooltip" data-bs-placement="bottom" title="Tooltip on bottom">
+              Logout    <img class="ml-5"  src="{% static 'app/images/logout.png' %}" height="30px" alt=""  >
+              </button></a>
             </li>
           </ul>
         </div>

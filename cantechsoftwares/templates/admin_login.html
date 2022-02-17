@@ -28,11 +28,12 @@ Admin
             <a class="nav-link" href="{% url 'Portal' %}"><i class="far fa-chart-bar"></i> Developers Section</a>
         </li>
     </ul>
-
+    
 </div>
 {% endblock %}
 
 {% block content %}
+<link rel="stylesheet" href="{% static 'app/css/admin-login.css' %}">
 
 
 {% if message %}
