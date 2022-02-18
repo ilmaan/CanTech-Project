@@ -60,7 +60,11 @@ class Admin_login(View):
 
 class Administrator(View):
     def get(self,request):
-        return render(request,'administrator.html')
+        if request.user.is_authenticated:
+            if request.user.is_superuser:
+                return render(request,'administrator.html')
+            else:
+                return redirect('Portal')
 
 class User_login(View):
     def post(self,request):

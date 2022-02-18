@@ -50,11 +50,11 @@ class Developer(View):
             return redirect('job/user-login')
         else:
             user = request.user
-            print(user,'JAJAJA')
             print(user.username,'POPOPOPO')
             cuser = UserModel.objects.get(uemail=user.username)
+            allusers = UserModel.objects.all()
                 
-            return render(request,'developers.html',{'cuser':cuser})
+            return render(request,'developers.html',{'cuser':cuser,'allusers':allusers})
 
 class Recruiter(View):
     def get(self,request):
