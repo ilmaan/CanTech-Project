@@ -9,4 +9,4 @@ class FeedbackAdmin(admin.ModelAdmin):
     list_display = ['f_name','f_phoneno','f_email']
 
 
-admin.register(QuotationModel)
+admin.site.register(QuotationModel)

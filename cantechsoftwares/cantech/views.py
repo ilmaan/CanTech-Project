@@ -98,9 +98,10 @@ class GetQuote(View):
             qbussiness = request.POST['qbussiness']
             totalpage = request.POST['totalpage']
             stack = request.POST['stack']
-            qbudget = request.POST.get('qbudget')
+            qbudget = 0
             qteam = request.POST['qteam']
             qtype = request.POST['qtype']
+            
 
-            feedback = FeedbackModel.objects.create(qname=qname,qphone=qphone,qemail=qemail,qbussiness=qbussiness,totalpage=totalpage,stack=stack,qbudget=qbudget,qteam=qteam,qtype=qtype)
+            feedback = QuotationModel.objects.create(qname=qname,qphone=qphone,qemail=qemail,qbussiness=qbussiness,totalpage=totalpage,stack=stack,qbudget=qbudget,qteam=qteam,qtype=qtype)
         return redirect('home') 

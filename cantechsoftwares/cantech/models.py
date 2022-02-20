@@ -15,7 +15,7 @@ class QuotationModel(models.Model):
     qphone = models.CharField(max_length=12,blank=True)
     qemail = models.EmailField(blank=True)
     qbussiness = models.CharField(max_length=30,blank=True)
-    qnoofpages = models.IntegerField(blank=True)
+    totalpage = models.IntegerField(blank=True)
     stack = models.CharField(max_length=30,blank=True)
     qbudget = models.IntegerField(blank=True)   
     qteam  = models.BooleanField(blank=True)
