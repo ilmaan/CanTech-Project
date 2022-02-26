@@ -60,9 +60,18 @@ class Admin_login(View):
 
 class Administrator(View):
     def get(self,request):
+        who = request.GET.get('who')
         if request.user.is_authenticated:
             if request.user.is_superuser:
-                return render(request,'administrator.html')
+                developers = UserModel.objects.all()
+                recruiters = RecruiterModel.objects.all()
+                if who == 'user':
+                    return render(request,'administrator.html',{'developers':developers,'who':'user'})
+                elif who == 'recruiter':
+                    return render(request,'administrator.html',{'recruiters':recruiters,'who':'user'})
+                else:
+                    return render(request,'administrator.html',{'recruiters':recruiters,'developers':developers,'who':'all'})
+
             else:
                 return redirect('Portal')
 
