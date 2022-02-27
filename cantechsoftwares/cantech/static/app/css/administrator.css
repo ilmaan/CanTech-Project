@@ -402,8 +402,8 @@ body {
   align-items: center;
 }
 .tableView .product-cell img {
-  width: 32px;
-  height: 32px;
+  width: 50px;
+  height: 50px;
   border-radius: 6px;
   margin-right: 6px;
 }
