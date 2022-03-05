@@ -269,15 +269,15 @@
             <div class="product-cell category"><span class="cell-label">Comany:</span>{{ rec.company }}</div>
             <div class="product-cell status-cell">
               <span class="cell-label">Status:</span>
-              {% if rec.status == 'Pending' %}
-              <span class="status disabled ">{{ rec.status }}</span>
+              {% if rec.status == 'pending' %}
+              <a href="{% url 'change_status' rec.id %}"><span class="status disabled ">{{ rec.status }}</span></a>
               {% else %}
-              <span class="status active">{{ rec.status }}</span>
+              <a href="{% url 'change_status' rec.id %}"><span class="status active">{{ rec.status }}</span></a>
               {% endif %}
             </div>
             <div class="product-cell sales"><span class="cell-label">Phone:</span>{{ rec.rphone }}</div> 
             <div class="product-cell stock"><span class="cell-label">Email:</span>{{ rec.remail }}</div>
-            <div class="product-cell price"><span class="cell-label">Action:</span><a onclick="return confirm('Are You Sure?')" href="{% url 'delete_url' rec.id 'recruiter' %}"><span class="status disabled">Delete</span></a></div>
+            <div class="product-cell price"><span class="cell-label">Action:</span><a onclick=" confirm('Are You Sure?')" href="{% url 'delete_url' rec.id 'recruiter' %}"><span class="status disabled">Delete</span></a></div>
           </div>
           {% endfor %}
           {% endif %}

@@ -63,13 +63,15 @@ class Administrator(View):
         if request.user.is_authenticated:
             if request.user.is_superuser:
                 w = request.GET.get('who') 
+                print(w,']]]]]]')
                 developers = UserModel.objects.all()
                 recruiters = RecruiterModel.objects.all()
                 if 'users' == w:
                     return render(request,'administrator.html',{'developers':developers,'who':'user'})
                 elif 'recruiter' == w:
                     return render(request,'administrator.html',{'recruiters':recruiters,'who':'recruiter'})
-                elif w == 'pending' or 'Pending':
+                elif w == 'pending':
+                    print(w,';;;;;;;;;;;;;;;;;;;;;')
                     recruiters = RecruiterModel.objects.filter(status='pending')
                     return render(request,'administrator.html',{'recruiters':recruiters,'who':'recruiter'})
 
@@ -83,19 +85,30 @@ class Administrator(View):
 class delete_url(View):
     def get(self,request,pid,type):
         if request.user.is_authenticated:
-            print(type,'dddddddd')
             if type == 'user':
                 user = UserModel.objects.get(id=pid)
                 obj  = User.objects.get(id=pid)
             elif type == 'recruiter':
                 user = RecruiterModel.objects.get(id=pid)   
                 obj  = User.objects.get(id=pid)
-            user.delete()
-            obj.delete()
-            return redirect('Administrator',who='recruiter')
+            # user.delete()
+            # obj.delete()
+
+            return redirect('Administrator',)
 
         return render(request,'administrator.html')
 
+class change_status(View):
+    def get(self,request,pid):
+        if request.user.is_authenticated:
+            user = RecruiterModel.objects.get(id=pid)
+            if user.status == 'pending':
+                user.status = 'active'
+            else:
+                user.status = 'pending'
+            user.save()
+            return redirect('Administrator')
+        return render(request,'administrator.html')
 
 class User_login(View):
     def post(self,request):
