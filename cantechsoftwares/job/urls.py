@@ -15,6 +15,7 @@ urlpatterns = [
     path('Signup',views.Signup.as_view(),name="Signup"),
     path('Logout',views.Logout.as_view(),name="Logout"),
     path('Administrator',views.Administrator.as_view(),name="Administrator"), 
+    path('delete_url/<int:pid>/<str:type>',views.delete_url.as_view(),name="delete_url"), 
     
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
