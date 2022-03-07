@@ -2,7 +2,7 @@ from calendar import c
 from email import message
 from django.contrib.auth import authenticate, load_backend, login, logout
 from django.http.response import JsonResponse
-from django.shortcuts import redirect, render
+from django.shortcuts import redirect, render, reverse
 from django.views import View
 from .models import *
 from django.contrib import messages
@@ -63,15 +63,13 @@ class Administrator(View):
         if request.user.is_authenticated:
             if request.user.is_superuser:
                 w = request.GET.get('who') 
-                print(w,']]]]]]')
                 developers = UserModel.objects.all()
                 recruiters = RecruiterModel.objects.all()
                 if 'users' == w:
                     return render(request,'administrator.html',{'developers':developers,'who':'user'})
-                elif 'recruiter' == w:
+                elif 'recruiter' == w:  
                     return render(request,'administrator.html',{'recruiters':recruiters,'who':'recruiter'})
                 elif w == 'pending':
-                    print(w,';;;;;;;;;;;;;;;;;;;;;')
                     recruiters = RecruiterModel.objects.filter(status='pending')
                     return render(request,'administrator.html',{'recruiters':recruiters,'who':'recruiter'})
 
@@ -94,7 +92,7 @@ class delete_url(View):
             # user.delete()
             # obj.delete()
 
-            return redirect('Administrator',)
+            return redirect(reverse('Administrator')+'?who=recruiter')
 
         return render(request,'administrator.html')
 
@@ -102,12 +100,12 @@ class change_status(View):
     def get(self,request,pid):
         if request.user.is_authenticated:
             user = RecruiterModel.objects.get(id=pid)
-            if user.status == 'pending':
+            if user.status == ('pending' or 'Pending'):
                 user.status = 'active'
             else:
                 user.status = 'pending'
             user.save()
-            return redirect('Administrator')
+            return redirect(reverse('Administrator')+'?who=recruiter')
         return render(request,'administrator.html')
 
 class User_login(View):
@@ -221,6 +219,8 @@ class Recruiter_login(View):
                         user = User.objects.create_user(first_name=rname,username=remail,password=psswd,email=remail)
                         RecruiterModel.objects.create(user=user,rname=rname,remail=remail,rphone=rphno,password=psswd,user_type=type,company=company)
                         # return render(request,'signup.html',{'data':data})
+                        user = authenticate(username=remail, password=psswd)
+                        login(request, user)
                         return redirect('recruiter')
                     except Exception as e:
                         message = 'User Already Exist by this Email or Mobile'
