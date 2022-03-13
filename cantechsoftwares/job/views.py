@@ -82,17 +82,22 @@ class Administrator(View):
 
 class delete_url(View):
     def get(self,request,pid,type):
+        print(pid,'pid===================',type)
         if request.user.is_authenticated:
-            if type == 'user':
-                user = UserModel.objects.get(id=pid)
+            if type == 'users':
+                # user = UserModel.objects.get(id=pid)
                 obj  = User.objects.get(id=pid)
             elif type == 'recruiter':
-                user = RecruiterModel.objects.get(id=pid)   
+                print('recruiter=====================')
+                # user = RecruiterModel.objects.get(id=pid) 
                 obj  = User.objects.get(id=pid)
+                print(obj,'obj=====================')
+            print('USERID+++++++',obj)
+            
             # user.delete()
-            # obj.delete()
+            obj.delete()
 
-            return redirect(reverse('Administrator')+'?who=recruiter')
+            return redirect(reverse('Administrator')+'?who='+type)
 
         return render(request,'administrator.html')
 
