@@ -211,13 +211,15 @@ class Recruiter_login(View):
                 psswd = request.POST['psswd']
                 cpsswd = request.POST['cpsswd']
                 company = request.POST['company']
+                image = request.FILES.get('image')
+
                 type = "Recruiter"
                 data = {'uname':rname,'uemail':remail,'uphno':rphno,'psswd':psswd,'type':type}
-                print(data)
+                
                 if psswd == cpsswd:
                     try:
                         user = User.objects.create_user(first_name=rname,username=remail,password=psswd,email=remail)
-                        RecruiterModel.objects.create(user=user,rname=rname,remail=remail,rphone=rphno,password=psswd,user_type=type,company=company)
+                        RecruiterModel.objects.create(user=user,rname=rname,remail=remail,rphone=rphno,password=psswd,user_type=type,company=company,image=image)
                         # return render(request,'signup.html',{'data':data})
                         user = authenticate(username=remail, password=psswd)
                         login(request, user)
