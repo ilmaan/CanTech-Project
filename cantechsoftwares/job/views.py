@@ -297,3 +297,36 @@ class Signup(View):
         
         return render(request,'signup.html')
 
+class change_password(View):
+    def get(self,request):
+        if not request.user.is_authenticated:
+            return redirect('Portal')
+        else:
+            return render(request,'change_password.html')    
+
+    def post(self,request):
+        if request.method == 'POST':
+            old_password = request.POST.get('old_password')
+            new_password = request.POST.get('new_password')
+            confirm_password = request.POST.get('confirm_password')
+            who = request.POST.get('who')
+            if new_password == confirm_password:
+                user = authenticate(username=request.user.email, password=old_password)
+                if who == 'recruiter':
+                    userm = RecruiterModel.objects.get(user=user)
+                elif who == 'developer':
+                    userm = UserModel.objects.get(user=user)
+       
+                if user:
+                    user.set_password(new_password)
+                    user.save()
+                    userm.password = new_password
+                    userm.save()
+                    # return redirect('Portal')
+                    return render(request,'change_password.html',{'message':'Password Changed'})
+
+                else:
+                    return render(request,'change_password.html',{'message':'Invalid Old Password'})
+            else:
+                return render(request,'change_password.html',{'message':'New Password and Confirm Password does not match'})
+        return render(request,'change_password.html')
