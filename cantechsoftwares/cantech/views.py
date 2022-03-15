@@ -62,10 +62,15 @@ class Recruiter(View):
         if not request.user.is_authenticated:
             return redirect('job/user-login')
         else:
+            w = request.GET.get('who') 
             user = request.user
-            print(user,'JAJAJA')
-            print(user.username,'POPOPOPO')
             cuser = RecruiterModel.objects.get(remail=user.username)
+            if w == 'users':
+                data = UserModel.objects.all()
+                return render(request,'recruiter-user.html',{'cuser':cuser,'data':data})
+            elif w == 'recruiter':
+                data = RecruiterModel.objects.all()
+                return render(request,'recruiter-user.html',{'cuser':cuser,'data':data})
                 
             return render(request,'recruiter.html',{'cuser':cuser})
 

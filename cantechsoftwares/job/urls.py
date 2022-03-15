@@ -18,6 +18,7 @@ urlpatterns = [
     path('delete_url/<int:pid>/<str:type>',views.delete_url.as_view(),name="delete_url"), 
     path('change_status/<int:pid>',views.change_status.as_view(),name="change_status"), 
     path('change_password',views.change_password.as_view(),name="change_password"), 
+    path('recruiter_user',views.recruiter_user.as_view(),name="recruiter_user"), 
     
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

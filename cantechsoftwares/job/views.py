@@ -330,3 +330,17 @@ class change_password(View):
             else:
                 return render(request,'change_password.html',{'message':'New Password and Confirm Password does not match'})
         return render(request,'change_password.html')
+
+
+class recruiter_user(View):
+    def get(self,request):
+        if not request.user.is_authenticated:
+            return redirect('job/user-login')
+        else:
+            user = request.user
+            cuser = RecruiterModel.objects.get(remail=user.username)
+            developers = UserModel.objects.all()
+            recruiters = RecruiterModel.objects.all()
+                
+            return render(request,'recruiter.html',{'cuser':cuser,'recruiters':recruiters,'developers':developers   })
+

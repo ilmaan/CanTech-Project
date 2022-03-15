@@ -30,6 +30,7 @@ Services
 {% endblock %}
 
 {% block content %}
+<link rel="stylesheet" href="{% static 'app/css/administrator.css' %}">
 
 <link rel="stylesheet" href="{% static 'app/css/recruiter.css' %}">
 
@@ -49,7 +50,7 @@ Services
             <span>Recruiter</span>
           </div>
           <ul class="nav-list">
-            <li class="nav-list-item active">
+            <li class="nav-list-item ">
               <a class="nav-list-link" href="{% url 'recruiter' %}">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-columns"><path d="M12 3h7a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-7m0-18H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h7m0-18v18"/></svg>
                 Dashboard
@@ -61,10 +62,10 @@ Services
                 Jobs
               </a>
             </li>
-            <li class="nav-list-item">
-              <a class="nav-list-link" href="{% url 'recruiter' %}?who=users">
+            <li class="nav-list-item active">
+              <a class="nav-list-link" href="{% url 'recruiter' %}?who=recruiter">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><polyline points="13 2 13 9 20 9"/></svg>
-                Applications
+                Applicants
               </a>
             </li>
             <li class="nav-list-item">
@@ -83,167 +84,143 @@ Services
           </ul>
         </div>
         <div class="app-main">
-          <div class="main-header-line">
-            <h1>Applications Dashboard</h1>
-            <div class="action-buttons">
-              <button class="open-right-area">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-            </button>
-            <button class="menu-button">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-            </button>
-            </div>
-          </div>
-          <div class="chart-row three">
-            <div class="chart-container-wrapper">
-              <div class="chart-container">
-                <div class="chart-info-wrapper">
-                  <h2>Applications</h2>
-                  <span>20.5 K</span>
-                </div>
-                <div class="chart-svg">
-                  <svg viewBox="0 0 36 36" class="circular-chart pink">
-            <path class="circle-bg" d="M18 2.0845
-                a 15.9155 15.9155 0 0 1 0 31.831
-                a 15.9155 15.9155 0 0 1 0 -31.831"></path>
-            <path class="circle" stroke-dasharray="30, 100" d="M18 2.0845
-                a 15.9155 15.9155 0 0 1 0 31.831
-                a 15.9155 15.9155 0 0 1 0 -31.831"></path>
-            <text x="18" y="20.35" class="percentage">30%</text>
-          </svg>
-                </div>
-              </div>
-            </div>
-            <div class="chart-container-wrapper">
-              <div class="chart-container">
-                <div class="chart-info-wrapper">
-                  <h2>Shortlisted</h2>
-                  <span>5.5 K</span>
-                </div>
-                <div class="chart-svg">
-                  <svg viewBox="0 0 36 36" class="circular-chart blue">
-            <path class="circle-bg" d="M18 2.0845
-                a 15.9155 15.9155 0 0 1 0 31.831
-                a 15.9155 15.9155 0 0 1 0 -31.831"></path>
-            <path class="circle" stroke-dasharray="60, 100" d="M18 2.0845
-                a 15.9155 15.9155 0 0 1 0 31.831
-                a 15.9155 15.9155 0 0 1 0 -31.831"></path>
-            <text x="18" y="20.35" class="percentage">60%</text>
-          </svg>
-                </div>
-              </div>
-            </div>
-            <div class="chart-container-wrapper">
-              <div class="chart-container">
-                <div class="chart-info-wrapper">
-                  <h2>On-hold</h2>
-                  <span>10.5 K</span>
-                </div>
-                 <div class="chart-svg">
-                  <svg viewBox="0 0 36 36" class="circular-chart orange">
-            <path class="circle-bg" d="M18 2.0845
-                a 15.9155 15.9155 0 0 1 0 31.831
-                a 15.9155 15.9155 0 0 1 0 -31.831"></path>
-            <path class="circle" stroke-dasharray="90, 100" d="M18 2.0845
-                a 15.9155 15.9155 0 0 1 0 31.831
-                a 15.9155 15.9155 0 0 1 0 -31.831"></path>
-            <text x="18" y="20.35" class="percentage">90%</text>
-          </svg>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="chart-row two">
-            <div class="chart-container-wrapper big">
-              <div class="chart-container">
-                <div class="chart-container-header">
-                  <h2>Top Active Jobs</h2>
-                  <span>Last 30 days</span>
-                </div>
-                <div class="line-chart">
-                  <canvas id="chart"></canvas>
-                </div>
-                <div class="chart-data-details">
-                  <div class="chart-details-header"></div>
-                </div>
-              </div>
-            </div>
-            <div class="chart-container-wrapper small">
-              <div class="chart-container">
-                <div class="chart-container-header">
-                  <h2>Acquisitions</h2>
-                  <span href="#">This month</span>
-                </div>
-                <div class="acquisitions-bar">
-                 <span class="bar-progress rejected" style="width:8%;"></span>
-                  <span class="bar-progress on-hold" style="width:10%;"></span>
-                  <span class="bar-progress shortlisted" style="width:18%;"></span>
-                  <span class="bar-progress applications" style="width:64%;"></span>
-                </div>
-                <div class="progress-bar-info">
-                  <span class="progress-color applications"></span>
-                  <span class="progress-type">Applications</span>
-                  <span class="progress-amount">64%</span>
-                </div>
-                <div class="progress-bar-info">
-                  <span class="progress-color shortlisted"></span>
-                  <span class="progress-type">Shortlisted</span>
-                  <span class="progress-amount">18%</span>
-                </div>
-                <div class="progress-bar-info">
-                  <span class="progress-color on-hold"></span>
-                  <span class="progress-type">On-hold</span>
-                  <span class="progress-amount">10%</span>
-                </div>
-                <div class="progress-bar-info">
-                  <span class="progress-color rejected"></span>
-                  <span class="progress-type">Rejected</span>
-                  <span class="progress-amount">8%</span>
-                </div>
-              </div>
-              <div class="chart-container applicants">
-                <div class="chart-container-header">
-                  <h2>New Applicants</h2>
-                  <span>Today</span>
-                </div>
-                <div class="applicant-line">
-                  <img src="https://images.unsplash.com/photo-1587628604439-3b9a0aa7a163?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjB8fHdvbWFufGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60" alt="profile">
-                  <div class="applicant-info">
-                    <span>Emma Ray</span>
-                    <p>Applied for <strong>Product Designer</strong></p>
+            <div class="products-area-wrapper tableView">
+                <div class="products-header">
+                  <div class="product-cell image">
+                    Name
+                    <!-- <button class="sort-button">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 512 512">
+                        <path fill="currentColor"
+                          d="M496.1 138.3L375.7 17.9c-7.9-7.9-20.6-7.9-28.5 0L226.9 138.3c-7.9 7.9-7.9 20.6 0 28.5 7.9 7.9 20.6 7.9 28.5 0l85.7-85.7v352.8c0 11.3 9.1 20.4 20.4 20.4 11.3 0 20.4-9.1 20.4-20.4V81.1l85.7 85.7c7.9 7.9 20.6 7.9 28.5 0 7.9-7.8 7.9-20.6 0-28.5zM287.1 347.2c-7.9-7.9-20.6-7.9-28.5 0l-85.7 85.7V80.1c0-11.3-9.1-20.4-20.4-20.4-11.3 0-20.4 9.1-20.4 20.4v352.8l-85.7-85.7c-7.9-7.9-20.6-7.9-28.5 0-7.9 7.9-7.9 20.6 0 28.5l120.4 120.4c7.9 7.9 20.6 7.9 28.5 0l120.4-120.4c7.8-7.9 7.8-20.7-.1-28.5z" />
+                      </svg>
+                    </button> -->
                   </div>
+                  <div class="product-cell category">
+                    {% if who == 'recruiter' %}Category
+                    {% elif who == 'user' %}Professional Status
+                    {% endif %}
+                    <button class="sort-button">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 512 512">
+                        <path fill="currentColor"
+                          d="M496.1 138.3L375.7 17.9c-7.9-7.9-20.6-7.9-28.5 0L226.9 138.3c-7.9 7.9-7.9 20.6 0 28.5 7.9 7.9 20.6 7.9 28.5 0l85.7-85.7v352.8c0 11.3 9.1 20.4 20.4 20.4 11.3 0 20.4-9.1 20.4-20.4V81.1l85.7 85.7c7.9 7.9 20.6 7.9 28.5 0 7.9-7.8 7.9-20.6 0-28.5zM287.1 347.2c-7.9-7.9-20.6-7.9-28.5 0l-85.7 85.7V80.1c0-11.3-9.1-20.4-20.4-20.4-11.3 0-20.4 9.1-20.4 20.4v352.8l-85.7-85.7c-7.9-7.9-20.6-7.9-28.5 0-7.9 7.9-7.9 20.6 0 28.5l120.4 120.4c7.9 7.9 20.6 7.9 28.5 0l120.4-120.4c7.8-7.9 7.8-20.7-.1-28.5z" />
+                      </svg>
+                    </button></div>
+                  <div class="product-cell status-cell">
+                    {% if who == 'recruiter' %}Status
+                    {% elif who == 'user' %} Resume
+                    {% endif %}
+                    <button class="sort-button">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 512 512">
+                        <path fill="currentColor"
+                          d="M496.1 138.3L375.7 17.9c-7.9-7.9-20.6-7.9-28.5 0L226.9 138.3c-7.9 7.9-7.9 20.6 0 28.5 7.9 7.9 20.6 7.9 28.5 0l85.7-85.7v352.8c0 11.3 9.1 20.4 20.4 20.4 11.3 0 20.4-9.1 20.4-20.4V81.1l85.7 85.7c7.9 7.9 20.6 7.9 28.5 0 7.9-7.8 7.9-20.6 0-28.5zM287.1 347.2c-7.9-7.9-20.6-7.9-28.5 0l-85.7 85.7V80.1c0-11.3-9.1-20.4-20.4-20.4-11.3 0-20.4 9.1-20.4 20.4v352.8l-85.7-85.7c-7.9-7.9-20.6-7.9-28.5 0-7.9 7.9-7.9 20.6 0 28.5l120.4 120.4c7.9 7.9 20.6 7.9 28.5 0l120.4-120.4c7.8-7.9 7.8-20.7-.1-28.5z" />
+                      </svg>
+                    </button></div>
+                  <div class="product-cell sales">Phone<button class="sort-button">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 512 512">
+                        <path fill="currentColor"
+                          d="M496.1 138.3L375.7 17.9c-7.9-7.9-20.6-7.9-28.5 0L226.9 138.3c-7.9 7.9-7.9 20.6 0 28.5 7.9 7.9 20.6 7.9 28.5 0l85.7-85.7v352.8c0 11.3 9.1 20.4 20.4 20.4 11.3 0 20.4-9.1 20.4-20.4V81.1l85.7 85.7c7.9 7.9 20.6 7.9 28.5 0 7.9-7.8 7.9-20.6 0-28.5zM287.1 347.2c-7.9-7.9-20.6-7.9-28.5 0l-85.7 85.7V80.1c0-11.3-9.1-20.4-20.4-20.4-11.3 0-20.4 9.1-20.4 20.4v352.8l-85.7-85.7c-7.9-7.9-20.6-7.9-28.5 0-7.9 7.9-7.9 20.6 0 28.5l120.4 120.4c7.9 7.9 20.6 7.9 28.5 0l120.4-120.4c7.8-7.9 7.8-20.7-.1-28.5z" />
+                      </svg>
+                    </button></div>
+                  <div class="product-cell stock">Email<button class="sort-button">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 512 512">
+                        <path fill="currentColor"
+                          d="M496.1 138.3L375.7 17.9c-7.9-7.9-20.6-7.9-28.5 0L226.9 138.3c-7.9 7.9-7.9 20.6 0 28.5 7.9 7.9 20.6 7.9 28.5 0l85.7-85.7v352.8c0 11.3 9.1 20.4 20.4 20.4 11.3 0 20.4-9.1 20.4-20.4V81.1l85.7 85.7c7.9 7.9 20.6 7.9 28.5 0 7.9-7.8 7.9-20.6 0-28.5zM287.1 347.2c-7.9-7.9-20.6-7.9-28.5 0l-85.7 85.7V80.1c0-11.3-9.1-20.4-20.4-20.4-11.3 0-20.4 9.1-20.4 20.4v352.8l-85.7-85.7c-7.9-7.9-20.6-7.9-28.5 0-7.9 7.9-7.9 20.6 0 28.5l120.4 120.4c7.9 7.9 20.6 7.9 28.5 0l120.4-120.4c7.8-7.9 7.8-20.7-.1-28.5z" />
+                      </svg>
+                    </button></div>
+                  <div class="product-cell price">
+                    {% if who == 'recruiter' %}Status
+                    {% elif who == 'user' %} Experience
+                    {% endif %}
+                    <button class="sort-button">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 512 512">
+                        <path fill="currentColor"
+                          d="M496.1 138.3L375.7 17.9c-7.9-7.9-20.6-7.9-28.5 0L226.9 138.3c-7.9 7.9-7.9 20.6 0 28.5 7.9 7.9 20.6 7.9 28.5 0l85.7-85.7v352.8c0 11.3 9.1 20.4 20.4 20.4 11.3 0 20.4-9.1 20.4-20.4V81.1l85.7 85.7c7.9 7.9 20.6 7.9 28.5 0 7.9-7.8 7.9-20.6 0-28.5zM287.1 347.2c-7.9-7.9-20.6-7.9-28.5 0l-85.7 85.7V80.1c0-11.3-9.1-20.4-20.4-20.4-11.3 0-20.4 9.1-20.4 20.4v352.8l-85.7-85.7c-7.9-7.9-20.6-7.9-28.5 0-7.9 7.9-7.9 20.6 0 28.5l120.4 120.4c7.9 7.9 20.6 7.9 28.5 0l120.4-120.4c7.8-7.9 7.8-20.7-.1-28.5z" />
+                      </svg>
+                    </button></div>
+                    {% if who == 'user' %} 
+                    <div class="product-cell price">
+                      Action
+                      <button class="sort-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 512 512">
+                          <path fill="currentColor"
+                          d="M496.1 138.3L375.7 17.9c-7.9-7.9-20.6-7.9-28.5 0L226.9 138.3c-7.9 7.9-7.9 20.6 0 28.5 7.9 7.9 20.6 7.9 28.5 0l85.7-85.7v352.8c0 11.3 9.1 20.4 20.4 20.4 11.3 0 20.4-9.1 20.4-20.4V81.1l85.7 85.7c7.9 7.9 20.6 7.9 28.5 0 7.9-7.8 7.9-20.6 0-28.5zM287.1 347.2c-7.9-7.9-20.6-7.9-28.5 0l-85.7 85.7V80.1c0-11.3-9.1-20.4-20.4-20.4-11.3 0-20.4 9.1-20.4 20.4v352.8l-85.7-85.7c-7.9-7.9-20.6-7.9-28.5 0-7.9 7.9-7.9 20.6 0 28.5l120.4 120.4c7.9 7.9 20.6 7.9 28.5 0l120.4-120.4c7.8-7.9 7.8-20.7-.1-28.5z" />
+                        </svg>
+                      </button></div>
+                      {% endif %}
+                    
                 </div>
-                <div class="applicant-line">
-                  <img src="https://images.unsplash.com/photo-1583195764036-6dc248ac07d9?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2555&q=80" alt="profile">
-                  <div class="applicant-info">
-                    <span>Ricky James</span>
-                    <p>Applied for <strong>IOS Developer</strong></p>
+                {% if who == 'recruiter' %}
+                {% for rec in recruiters %}
+                <div class="products-row">
+                  <button class="cell-more-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      class="feather feather-more-vertical">
+                      <circle cx="12" cy="12" r="1" />
+                      <circle cx="12" cy="5" r="1" />
+                      <circle cx="12" cy="19" r="1" />
+                    </svg>
+                  </button>
+                  <div class="product-cell image">
+                    {% if rec.image %}
+                    <img src="{{ rec.image.url }}" alt="product">
+                    {% endif %}
+                    <span>{{ rec.rname }}</span>
                   </div>
-                </div>
-                <div class="applicant-line">
-                  <img src="https://images.unsplash.com/photo-1450297350677-623de575f31c?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MzV8fHdvbWFufGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60" alt="profile">
-                  <div class="applicant-info">
-                    <span>Julia Wilson</span>
-                    <p>Applied for <strong>UI Developer</strong></p>
+                  <div class="product-cell category"><span class="cell-label">Comany:</span>{{ rec.company }}</div>
+                  <div class="product-cell status-cell">
+                    <span class="cell-label">Status:</span>
+                    {% if rec.status == 'pending' %}
+                    <a href="{% url 'change_status' rec.id %}"><span class="status disabled ">{{ rec.status }}</span></a>
+                    {% else %}
+                    <a href="{% url 'change_status' rec.id %}"><span class="status active">{{ rec.status }}</span></a>
+                    {% endif %}
                   </div>
+                  <div class="product-cell sales"><span class="cell-label">Phone:</span>{{ rec.rphone }}</div> 
+                  <div class="product-cell stock"><span class="cell-label">Email:</span>{{ rec.remail }}</div>
+                  <div class="product-cell price"><span class="cell-label">Action:</span><a onclick=" confirm('Are You Sure?')" href="{% url 'delete_url' rec.user.id 'recruiter' %}"><span class="status disabled">Delete</span></a></div>
                 </div>
-                <div class="applicant-line">
-                  <img src="https://images.unsplash.com/photo-1596815064285-45ed8a9c0463?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1215&q=80" alt="profile">
-                  <div class="applicant-info">
-                    <span>Jess Watson</span>
-                    <p>Applied for <strong>Design Lead</strong></p>
+                {% endfor %}
+                {% endif %}
+                
+                {% if who == 'user' %}
+                {% for dev in developers %}
+                <div class="products-row">
+                  <button class="cell-more-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      class="feather feather-more-vertical">
+                      <circle cx="12" cy="12" r="1" />
+                      <circle cx="12" cy="5" r="1" />
+                      <circle cx="12" cy="19" r="1" />
+                    </svg>
+                  </button>
+                  <div class="product-cell image">
+                    {% if dev.image %}
+                    <img src="{{ dev.image.url }}" alt="product">
+                    {% endif %}
+                    <span>{{ dev.uname }}</span>
                   </div>
-                </div>
-                <div class="applicant-line">
-                  <img src="https://images.unsplash.com/photo-1543965170-4c01a586684e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2232&q=80" alt="profile">
-                  <div class="applicant-info">
-                    <span>John Pellegrini</span>
-                    <p>Applied for <strong>Back-End Developer</strong></p>
+                  <div class="product-cell category"><span class="cell-label">Comany:</span>{{ dev.type }}</div>
+                  <div class="product-cell status-cell">
+                    <span class="cell-label">Resume:</span>
+                    {% if dev.resume  %}
+                    <span class="status active">
+                     <a href="{{ dev.resume.url }}" download class="resume"  >Resume</a></span>
+                    {% else %}
+                    <span class="status disabled ">Not Available</span>
+                    {% endif %}
                   </div>
+                  <div class="product-cell sales"><span class="cell-label">Phone:</span>{{ dev.uphone }}</div>
+                  <div class="product-cell stock"><span class="cell-label">Email:</span>{{ dev.uemail }}</div>
+                  <div class="product-cell price"><span class="cell-label">Experience:</span>{{ dev.experience }}</div>
+                  <div class="product-cell price"><span class="cell-label">Action:</span><a onclick=" confirm('Are You Sure?')" href="{% url 'delete_url' dev.user.id 'users' %}"><span class="status disabled">Delete</span></a></div>
+      
                 </div>
+                {% endfor %}
+                {% endif %}
+                
               </div>
-            </div>
-          </div>
         </div>
         <div class="app-right">
           <button class="close-right">
